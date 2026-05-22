@@ -25,7 +25,7 @@ Constraints:
 intervals[i].length == 2
 0 <= starti <= endi <= 104 */
 
-function merge(intervals: number[][]) {
+export function merge(intervals: number[][]) {
     if (intervals.length <= 1) return intervals;
   
     // Sort by start ascending

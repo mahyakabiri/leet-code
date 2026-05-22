@@ -32,7 +32,7 @@ Constraints:
 0 <= strs[i].length <= 100
 strs[i] consists of lowercase English letters. */
 
-function groupAnagrams(strs: string[]): string[][] {
+export function groupAnagrams(strs: string[]): string[][] {
     const sortedArray = new Map();
     for(let i = 0; i < strs.length; i++){
         let key = strs[i].split('').sort().join();

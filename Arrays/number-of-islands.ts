@@ -30,7 +30,7 @@ n == grid[i].length
 1 <= m, n <= 300
 grid[i][j] is '0' or '1'. */
 
-function numIslands(grid: string[][]) {
+export function numIslands(grid: string[][]) {
     if (!grid || grid.length === 0) return 0;
   
     const rows = grid.length;
