@@ -2,6 +2,7 @@ import { numIslands } from './number-of-islands';
 import { groupAnagrams } from './group-anagrams';
 import { merge } from './merge-intervals';
 import { twoSum } from './two-sum-input-array';
+import { maxArea } from './container-with-most-water';
 
 // helper: sort groups for order-independent comparison
 const sortGroups = (groups: string[][]): string[][] =>
@@ -124,5 +125,39 @@ describe('167. Two Sum II - Input Array Is Sorted', () => {
 
   it('handles a two-element array', () => {
     expect(twoSum([3, 5], 8)).toEqual([1, 2]);
+  });
+});
+
+describe('11. Container With Most Water', () => {
+  it('returns 49 for the first example', () => {
+    expect(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])).toBe(49);
+  });
+
+  it('returns 1 for two equal heights', () => {
+    expect(maxArea([1, 1])).toBe(1);
+  });
+
+  it('picks the widest pair when heights are equal', () => {
+    expect(maxArea([4, 4, 4, 4])).toBe(12);
+  });
+
+  it('handles ascending heights', () => {
+    expect(maxArea([1, 2, 3, 4, 5])).toBe(6);
+  });
+
+  it('handles descending heights', () => {
+    expect(maxArea([5, 4, 3, 2, 1])).toBe(6);
+  });
+
+  it('handles one zero-height wall', () => {
+    expect(maxArea([0, 10000])).toBe(0);
+  });
+
+  it('handles n = 10^5 within time (two-pointer must be O(n))', () => {
+    const n = 100_000;
+    const height = Array.from({ length: n }, (_, i) => i % 10000);
+    const start = Date.now();
+    maxArea(height);
+    expect(Date.now() - start).toBeLessThan(100);
   });
 });
