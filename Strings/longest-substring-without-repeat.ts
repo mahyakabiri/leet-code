@@ -23,7 +23,7 @@ Constraints:
 0 <= s.length <= 5 * 104
 s consists of English letters, digits, symbols and spaces */
 
-function lengthOfLongestSubstring(s: string): number {
+export function lengthOfLongestSubstring(s: string): number {
     let maxLength: number = 0;
     for(let i = 0; i< s.length;i++){
         let substring = s[i];
@@ -43,4 +43,3 @@ function lengthOfLongestSubstring(s: string): number {
     return maxLength;
 };
 
-console.log(lengthOfLongestSubstring('abcabcbb'));

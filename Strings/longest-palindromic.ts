@@ -15,14 +15,13 @@
  1 <= s.length <= 1000
  s consist of only digits and English letters. */
 
-function longestPalindrome(s: string): string {
+export function longestPalindrome(s: string): string {
     let polindrome = '';
     function isPalindrome(i: number, j: number, s: string) {
     while(s[i]===s[j] && i < s.length && j >= 0){
       i++;
       j--;
     }
-    console.log(i,j)
     return s.slice(j+1, i);
     }
 
