@@ -1,6 +1,7 @@
 import { numIslands } from './number-of-islands';
 import { groupAnagrams } from './group-anagrams';
 import { merge } from './merge-intervals';
+import { twoSum } from './two-sum-input-array';
 
 // helper: sort groups for order-independent comparison
 const sortGroups = (groups: string[][]): string[][] =>
@@ -101,5 +102,27 @@ describe('56. Merge Intervals', () => {
 
   it('merges all intervals into one', () => {
     expect(merge([[1, 4], [2, 5], [3, 6]])).toEqual([[1, 6]]);
+  });
+});
+
+describe('167. Two Sum II - Input Array Is Sorted', () => {
+  it('finds the pair at the beginning of the array', () => {
+    expect(twoSum([2, 7, 11, 15], 9)).toEqual([1, 2]);
+  });
+
+  it('finds the pair when one index is not the first element', () => {
+    expect(twoSum([2, 3, 4], 6)).toEqual([1, 3]);
+  });
+
+  it('handles negative numbers', () => {
+    expect(twoSum([-1, 0], -1)).toEqual([1, 2]);
+  });
+
+  it('finds the pair at the end of the array', () => {
+    expect(twoSum([1, 2, 3, 4, 5], 9)).toEqual([4, 5]);
+  });
+
+  it('handles a two-element array', () => {
+    expect(twoSum([3, 5], 8)).toEqual([1, 2]);
   });
 });
